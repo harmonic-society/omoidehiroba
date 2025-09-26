@@ -1,0 +1,380 @@
+/*
+Theme Name: 思い出広場
+Theme URI: https://omoide-hiroba.com
+Author: Omoide Hiroba Team
+Author URI: https://omoide-hiroba.com
+Description: 千葉県市原市のレトロトイショップ「思い出広場」のオリジナルWordPressテーマ。昭和レトロな雰囲気を演出し、懐かしいおもちゃやコレクターアイテムの魅力を引き立てます。
+Version: 1.0.0
+License: Private
+Text Domain: omoide-hiroba
+Domain Path: /languages
+*/
+
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* カスタムプロパティ（CSS変数） */
+:root {
+    --primary-color: #d2691e; /* チョコレートブラウン */
+    --secondary-color: #ff6b35; /* レトロオレンジ */
+    --accent-color: #ffd700; /* ゴールド */
+    --text-color: #333333;
+    --bg-color: #faf0e6; /* リネン */
+    --header-bg: #8b4513; /* サドルブラウン */
+    --retro-green: #2e8b57;
+    --retro-red: #dc143c;
+    --retro-blue: #4682b4;
+}
+
+/* 基本スタイル */
+body {
+    font-family: 'Noto Sans JP', 'メイリオ', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 35px,
+            rgba(255, 255, 255, .1) 35px,
+            rgba(255, 255, 255, .1) 70px
+        );
+}
+
+/* タイポグラフィ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sawarabi Mincho', serif;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* コンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+.site-header {
+    background-color: var(--header-bg);
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.site-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 10px,
+            rgba(255,255,255,0.03) 10px,
+            rgba(255,255,255,0.03) 20px
+        );
+}
+
+.site-branding {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.site-title {
+    font-size: 3rem;
+    font-family: 'Sawarabi Mincho', serif;
+    margin: 0;
+    color: var(--accent-color);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    letter-spacing: 0.1em;
+}
+
+.site-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-description {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* ナビゲーション */
+.main-navigation {
+    background-color: var(--secondary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-navigation li {
+    position: relative;
+}
+
+.main-navigation a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.main-navigation a:hover {
+    background-color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* メインコンテンツ */
+.site-main {
+    padding: 3rem 0;
+    min-height: 60vh;
+}
+
+/* サイドバー */
+.widget-area {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.widget-title {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    border-left: 5px solid var(--accent-color);
+    padding-left: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+/* フッター */
+.site-footer {
+    background-color: var(--header-bg);
+    color: #fff;
+    padding: 2rem 0 1rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.site-footer a {
+    color: var(--accent-color);
+}
+
+/* レトロボタン */
+.retro-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
+    color: #fff;
+    border: 3px solid var(--accent-color);
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+}
+
+.retro-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+
+/* レトロカード */
+.retro-card {
+    background-color: #fff;
+    border: 3px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.retro-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* 価格タグ */
+.price-tag {
+    display: inline-block;
+    background-color: var(--retro-red);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.price-tag::before {
+    content: '¥';
+    font-size: 0.9em;
+}
+
+/* バッジ */
+.retro-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background-color: var(--retro-green);
+    color: #fff;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.retro-badge.new {
+    background-color: var(--retro-red);
+}
+
+.retro-badge.rare {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+    }
+
+    .main-navigation a {
+        text-align: center;
+    }
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* グリッドレイアウト */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* 商品カード */
+.product-card {
+    background-color: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1rem;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: var(--retro-red);
+    font-weight: bold;
+}

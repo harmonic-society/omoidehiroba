@@ -1,0 +1,92 @@
+name: Deploy
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup SSH and Deploy
+        env:
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOST: ${{ secrets.HOST }}
+          USER: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.SSH_PORT || '10022' }}  # デフォルト値を設定
+        run: |
+          # デバッグ情報
+          echo "Connecting to $USER@$HOST:$PORT"
+          
+          # ポート番号の確認
+          if [ -z "$PORT" ]; then
+            echo "Error: PORT is not set!"
+            exit 1
+          fi
+          
+          # SSH設定
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          
+          # 秘密鍵を書き出す
+          echo "$PRIVATE_KEY" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          
+          # 鍵の確認
+          echo "Key info:"
+          ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null && echo "Key is valid" || echo "Key is invalid"
+          
+          # known_hosts設定
+          ssh-keyscan -p $PORT -H $HOST >> ~/.ssh/known_hosts 2>/dev/null
+          
+          # SSH接続テスト
+          echo "Testing SSH connection..."
+          ssh -i ~/.ssh/deploy_key -p $PORT -o ConnectTimeout=10 $USER@$HOST "echo 'Connected successfully'"
+          
+          # デプロイ実行
+          echo "Starting deployment..."
+          ssh -i ~/.ssh/deploy_key -p $PORT $USER@$HOST << 'EOF'
+            set -e
+            THEME_DIR="/home/wp629555/omoidehiroba.com/public_html/wp-content/themes/omoidehiroba"
+            
+            # ディレクトリが存在しない場合は作成
+            mkdir -p "$THEME_DIR"
+            cd "$THEME_DIR"
+            
+            # Git設定（必要な場合のみ）
+            if [ -z "$(git config --get user.email)" ]; then
+              echo "Setting up Git config..."
+              git config user.email "deploy@omoidehiroba.com"
+              git config user.name "Deploy Bot"
+            fi
+
+            # Gitリポジトリが存在するかチェック
+            if [ ! -d ".git" ]; then
+              echo "Cloning repository..."
+              # 既存ファイルがある場合は一旦退避
+              if [ "$(ls -A)" ]; then
+                echo "Backing up existing files..."
+                mkdir -p ../omoidehiroba-backup
+                mv * ../omoidehiroba-backup/ 2>/dev/null || true
+              fi
+              # リポジトリをクローン
+              git clone https://github.com/harmonic-society/omoidehiroba.git .
+              echo "Repository cloned successfully"
+            else
+              echo "Pulling latest changes..."
+              # リモート設定を確認
+              git remote -v
+
+              # ローカルの変更を破棄して、リモートの最新版で強制的に更新
+              git fetch origin
+              git reset --hard FETCH_HEAD
+              echo "Repository updated successfully (forced reset to latest)"
+            fi
+            
+            # ファイル確認
+            echo "Files in directory:"
+            ls -la
+            
+            echo "Deployed at $(date)"
+          EOF
