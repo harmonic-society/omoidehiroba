@@ -214,9 +214,9 @@ get_header(); ?>
                         <h3>地図</h3>
                         <div class="map-container retro-card">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.732095849585!2d140.08577541525997!3d35.58477778021421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022a3f9f9f9f9f9%3A0x0!2s%E3%80%92290-0081%20%E5%8D%83%E8%91%89%E7%9C%8C%E5%B8%82%E5%8E%9F%E5%B8%82%E4%BA%94%E4%BA%95%E4%B8%AD%E5%A4%AE%E8%A5%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%92%E7%95%AA%E5%9C%B0%EF%BC%96%20%E5%B1%B1%E5%B4%8E%E7%AC%AC%E4%B8%80%E3%83%93%E3%83%AB102!5e0!3m2!1sja!2sjp!4v1635151234567!5m2!1sja!2sjp"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3247.5819353551524!2d140.08414537578028!3d35.51461437264152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60229ea6a1b4712d%3A0x7ddebf99d00b9642!2z44CSMjkwLTAwODEg5Y2D6JGJ55yM5biC5Y6f5biC5LqU5LqV5Lit5aSu6KW_77yR5LiB55uu77yS77yS4oiS77yWIOWxseW0juODk-ODqyAxMDI!5e0!3m2!1sja!2sjp!4v1758931080372!5m2!1sja!2sjp"
                                 width="100%"
-                                height="400"
+                                height="450"
                                 style="border:0;"
                                 allowfullscreen=""
                                 loading="lazy"
