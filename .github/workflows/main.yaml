@@ -54,34 +54,40 @@ jobs:
             mkdir -p "$THEME_DIR"
             cd "$THEME_DIR"
             
-            # Git設定（必要な場合のみ）
-            if [ -z "$(git config --get user.email)" ]; then
-              echo "Setting up Git config..."
-              git config user.email "deploy@omoidehiroba.com"
-              git config user.name "Deploy Bot"
-            fi
-
             # Gitリポジトリが存在するかチェック
             if [ ! -d ".git" ]; then
-              echo "Cloning repository..."
+              echo "Initializing Git repository..."
               # 既存ファイルがある場合は一旦退避
               if [ "$(ls -A)" ]; then
                 echo "Backing up existing files..."
                 mkdir -p ../omoidehiroba-backup
                 mv * ../omoidehiroba-backup/ 2>/dev/null || true
+                mv .* ../omoidehiroba-backup/ 2>/dev/null || true
               fi
               # リポジトリをクローン
               git clone https://github.com/harmonic-society/omoidehiroba.git .
               echo "Repository cloned successfully"
+
+              # Git設定
+              git config user.email "deploy@omoidehiroba.com"
+              git config user.name "Deploy Bot"
             else
               echo "Pulling latest changes..."
+
+              # Git設定（必要な場合のみ）
+              if [ -z "$(git config --get user.email)" ]; then
+                echo "Setting up Git config..."
+                git config user.email "deploy@omoidehiroba.com"
+                git config user.name "Deploy Bot"
+              fi
+
               # リモート設定を確認
               git remote -v
 
               # ローカルの変更を破棄して、リモートの最新版で強制的に更新
               git fetch origin
-              git reset --hard FETCH_HEAD
-              echo "Repository updated successfully (forced reset to latest)"
+              git reset --hard origin/main
+              echo "Repository updated successfully (forced reset to origin/main)"
             fi
             
             # ファイル確認
