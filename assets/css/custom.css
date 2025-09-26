@@ -246,12 +246,14 @@
     color: var(--primary-color);
 }
 
-.map-placeholder {
-    min-height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0;
+.map-container {
+    padding: 0;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    display: block;
+    border-radius: 10px;
 }
 
 /* お問い合わせセクション */

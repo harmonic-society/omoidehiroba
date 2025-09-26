@@ -191,26 +191,38 @@ get_header(); ?>
                         <h3>店舗情報</h3>
                         <dl>
                             <dt>住所</dt>
-                            <dd>〒290-0000 千葉県市原市○○町1-2-3</dd>
+                            <dd>〒290-0081 千葉県市原市五井中央西1丁目22番地6<br>山崎第一ビル102</dd>
 
                             <dt>電話番号</dt>
                             <dd>0436-XX-XXXX</dd>
 
                             <dt>営業時間</dt>
-                            <dd>10:00 - 19:00</dd>
+                            <dd>12:00 - 18:00</dd>
 
                             <dt>定休日</dt>
-                            <dd>水曜日</dd>
+                            <dd>不定休</dd>
 
                             <dt>駐車場</dt>
-                            <dd>店舗前に5台分あり</dd>
+                            <dd>近隣コインパーキングをご利用ください</dd>
+
+                            <dt>最寄り駅</dt>
+                            <dd>JR内房線 五井駅 徒歩約5分</dd>
                         </dl>
                     </div>
 
                     <div class="access-map">
                         <h3>地図</h3>
-                        <div class="map-placeholder retro-card">
-                            <p>Google マップがここに表示されます</p>
+                        <div class="map-container retro-card">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.732095849585!2d140.08577541525997!3d35.58477778021421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022a3f9f9f9f9f9%3A0x0!2s%E3%80%92290-0081%20%E5%8D%83%E8%91%89%E7%9C%8C%E5%B8%82%E5%8E%9F%E5%B8%82%E4%BA%94%E4%BA%95%E4%B8%AD%E5%A4%AE%E8%A5%BF%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%92%E7%95%AA%E5%9C%B0%EF%BC%96%20%E5%B1%B1%E5%B4%8E%E7%AC%AC%E4%B8%80%E3%83%93%E3%83%AB102!5e0!3m2!1sja!2sjp!4v1635151234567!5m2!1sja!2sjp"
+                                width="100%"
+                                height="400"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="思い出広場の地図">
+                            </iframe>
                         </div>
                     </div>
                 </div>
