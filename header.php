@@ -67,9 +67,8 @@
             "closes": "18:00"
         },
         "sameAs": [
-            "https://www.facebook.com/omoidehiroba",
-            "https://www.instagram.com/omoidehiroba",
-            "https://twitter.com/omoidehiroba"
+            "https://x.com/omoidehiroba",
+            "https://www.youtube.com/channel/UCb5lRKpYCD7b-YN1Mm9migw"
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -125,6 +124,16 @@
                     ?>
                     <p class="site-description"><?php echo $description; ?></p>
                 <?php endif; ?>
+
+                <!-- ヘッダーソーシャルリンク -->
+                <div class="header-social">
+                    <a href="https://x.com/omoidehiroba" target="_blank" rel="noopener noreferrer" class="social-icon-header" title="X（旧Twitter）">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCb5lRKpYCD7b-YN1Mm9migw" target="_blank" rel="noopener noreferrer" class="social-icon-header" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </header>

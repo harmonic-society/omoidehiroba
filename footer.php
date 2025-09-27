@@ -33,6 +33,18 @@
                     <p>〒290-0081 千葉県市原市五井中央西1丁目22番地6 山崎第一ビル102</p>
                     <p>営業時間: 12:00 - 18:00（不定休）</p>
                     <p>TEL: 0436-37-5791</p>
+
+                    <!-- ソーシャルリンク -->
+                    <div class="social-links">
+                        <a href="https://x.com/omoidehiroba" target="_blank" rel="noopener noreferrer" class="social-btn social-x" title="X（旧Twitter）をフォロー">
+                            <i class="fab fa-x-twitter"></i>
+                            <span>X</span>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCb5lRKpYCD7b-YN1Mm9migw" target="_blank" rel="noopener noreferrer" class="social-btn social-youtube" title="YouTubeチャンネルを見る">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
                 </div>
 
                 <?php if ( has_nav_menu( 'footer' ) ) : ?>

@@ -1,0 +1,189 @@
+/* ソーシャルリンク - レトロ可愛いデザイン */
+
+/* ヘッダーソーシャルリンク */
+.header-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.social-icon-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(145deg, #fff5e6, #ffdab9);
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+    position: relative;
+    transform: rotate(-5deg);
+}
+
+.social-icon-header:hover {
+    transform: rotate(5deg) scale(1.1);
+    background: linear-gradient(145deg, #ffdab9, #fff5e6);
+    color: var(--secondary-color);
+    box-shadow: 5px 5px 12px rgba(0,0,0,0.3);
+}
+
+/* フッターソーシャルリンク */
+.social-links {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(145deg, #fff, #f0f0f0);
+    border: 3px solid;
+    border-radius: 30px;
+    font-family: 'Yusei Magic', cursive;
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.15);
+    position: relative;
+    transform: rotate(-2deg);
+}
+
+.social-btn i {
+    font-size: 1.3rem;
+}
+
+.social-btn span {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+/* X（旧Twitter）ボタン */
+.social-btn.social-x {
+    border-color: #1DA1F2;
+    color: #1DA1F2;
+    background: linear-gradient(145deg, #e6f7ff, #ffffff);
+}
+
+.social-btn.social-x:hover {
+    transform: rotate(2deg) translateY(-3px);
+    background: linear-gradient(145deg, #1DA1F2, #0d8bd9);
+    color: #fff;
+    border-color: #0d8bd9;
+    box-shadow: 6px 6px 15px rgba(29, 161, 242, 0.3);
+}
+
+/* YouTubeボタン */
+.social-btn.social-youtube {
+    border-color: #FF0000;
+    color: #FF0000;
+    background: linear-gradient(145deg, #ffe6e6, #ffffff);
+}
+
+.social-btn.social-youtube:hover {
+    transform: rotate(2deg) translateY(-3px);
+    background: linear-gradient(145deg, #FF0000, #cc0000);
+    color: #fff;
+    border-color: #cc0000;
+    box-shadow: 6px 6px 15px rgba(255, 0, 0, 0.3);
+}
+
+/* レトロポップなアニメーション */
+@keyframes bounce {
+    0%, 100% {
+        transform: rotate(-2deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-2deg) translateY(-5px);
+    }
+}
+
+.social-btn:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* ホバー時の星エフェクト */
+.social-btn::before {
+    content: '★';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    opacity: 0;
+    transform: rotate(15deg);
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover::before {
+    opacity: 1;
+    transform: rotate(360deg) scale(1.2);
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .header-social {
+        gap: 0.8rem;
+    }
+
+    .social-icon-header {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-btn {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+}
+
+/* かわいいハートアニメーション */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.social-btn i {
+    animation: heartbeat 2s infinite;
+}
+
+.social-btn:hover i {
+    animation: none;
+}
+
+/* パステルカラーの背景パターン */
+.social-links::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(255, 182, 193, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(135, 206, 250, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(255, 255, 224, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
