@@ -194,7 +194,7 @@ get_header(); ?>
                             <dd>〒290-0081 千葉県市原市五井中央西1丁目22番地6<br>山崎第一ビル102</dd>
 
                             <dt>電話番号</dt>
-                            <dd>0436-XX-XXXX</dd>
+                            <dd>0436-37-5791</dd>
 
                             <dt>営業時間</dt>
                             <dd>12:00 - 18:00</dd>
@@ -238,7 +238,7 @@ get_header(); ?>
                     <div class="contact-methods">
                         <div class="contact-method">
                             <h3>お電話でのお問い合わせ</h3>
-                            <p class="contact-number">0436-XX-XXXX</p>
+                            <p class="contact-number">0436-37-5791</p>
                             <p>営業時間内にお願いいたします</p>
                         </div>
                         <div class="contact-method">
