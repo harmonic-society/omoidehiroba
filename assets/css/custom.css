@@ -76,6 +76,36 @@
     z-index: 1;
 }
 
+.renewal-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b35 0%, #ffd700 100%);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+    border: 3px solid #fff;
+    letter-spacing: 0.05em;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(255,107,53,0.4);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+}
+
 /* アバウトセクション */
 .about-section {
     padding: 4rem 0;
@@ -636,6 +666,13 @@
 
     .hero-subtitle {
         font-size: 1.2rem;
+    }
+
+    .renewal-badge {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+        top: 10px;
+        right: 10px;
     }
 
     .menu-toggle {

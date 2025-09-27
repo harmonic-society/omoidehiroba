@@ -18,7 +18,7 @@ get_header(); ?>
                 <a href="#featured-products" class="retro-button fade-in">商品を見る</a>
             </div>
             <div class="hero-decoration">
-                <span class="retro-badge">Since 2020</span>
+                <span class="renewal-badge">2025年10月よりリニューアルオープン！</span>
             </div>
         </section>
 
