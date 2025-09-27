@@ -69,11 +69,6 @@
 
                 <div class="copyright">
                     <p>&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
-                    <p class="powered-by">
-                        <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'omoide-hiroba' ) ); ?>">
-                            <?php printf( esc_html__( 'Proudly powered by %s', 'omoide-hiroba' ), 'WordPress' ); ?>
-                        </a>
-                    </p>
                 </div>
             </div>
         </div>
