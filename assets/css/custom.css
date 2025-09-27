@@ -42,6 +42,14 @@
     letter-spacing: 0.08em;
     font-weight: normal;
     transform: rotate(-1deg);
+    line-height: 1.3;
+}
+
+.hero-subtitle-part {
+    display: block;
+    font-size: 0.85em;
+    margin-top: 0.5rem;
+    letter-spacing: 0.06em;
 }
 
 .hero-subtitle {
