@@ -33,18 +33,25 @@
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
+    font-family: 'RocknRoll One', 'Yusei Magic', cursive;
     color: #fff;
     text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
     margin-bottom: 1rem;
     animation: slideDown 0.8s ease-out;
+    letter-spacing: 0.08em;
+    font-weight: normal;
+    transform: rotate(-1deg);
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-family: 'Klee One', 'Zen Kurenaido', cursive;
     color: #fff;
     margin-bottom: 2rem;
     animation: slideUp 0.8s ease-out 0.2s both;
+    font-weight: 600;
+    letter-spacing: 0.03em;
 }
 
 @keyframes slideDown {
@@ -82,13 +89,15 @@
     color: #fff;
     padding: 0.8rem 1.5rem;
     border-radius: 30px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Yusei Magic', cursive;
+    font-weight: normal;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     animation: pulse 2s infinite;
     border: 3px solid #fff;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
+    transform: rotate(3deg);
 }
 
 @keyframes pulse {
@@ -120,8 +129,10 @@
 }
 
 .about-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    font-family: 'Klee One', cursive;
+    letter-spacing: 0.03em;
 }
 
 .about-features {
@@ -143,6 +154,9 @@
 .feature-card h3 {
     color: var(--secondary-color);
     margin-bottom: 1rem;
+    font-family: 'Yusei Magic', cursive;
+    font-size: 1.4rem;
+    transform: rotate(-0.5deg);
 }
 
 /* 商品セクション */
@@ -189,8 +203,10 @@
 }
 
 .product-title {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     margin-bottom: 1rem;
+    font-family: 'Zen Kurenaido', 'Klee One', cursive;
+    letter-spacing: 0.02em;
 }
 
 .product-title a {
@@ -249,6 +265,9 @@
 .category-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
+    font-family: 'RocknRoll One', cursive;
+    font-size: 1.5rem;
+    transform: rotate(0.5deg);
 }
 
 /* アクセスセクション */
@@ -572,8 +591,11 @@
 
 .shop-info h3 {
     color: var(--accent-color);
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
+    font-family: 'RocknRoll One', 'Yusei Magic', cursive;
+    letter-spacing: 0.08em;
+    transform: rotate(-1deg);
 }
 
 .shop-info p {
@@ -661,18 +683,20 @@
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
+        transform: rotate(-0.5deg);
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .renewal-badge {
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding: 0.6rem 1rem;
         top: 10px;
         right: 10px;
+        transform: rotate(2deg);
     }
 
     .menu-toggle {

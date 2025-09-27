@@ -146,8 +146,8 @@ function omoide_hiroba_scripts() {
     // メインスタイルシート
     wp_enqueue_style( 'omoide-hiroba-style', get_stylesheet_uri(), array(), '1.0.0' );
 
-    // Google Fonts
-    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Sawarabi+Mincho&display=swap', array(), null );
+    // Google Fonts - ゆるい手書きフォント
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Yusei+Magic&family=RocknRoll+One&family=Zen+Kurenaido&display=swap', array(), null );
 
     // カスタムCSS
     wp_enqueue_style( 'omoide-hiroba-custom', get_template_directory_uri() . '/assets/css/custom.css', array( 'omoide-hiroba-style' ), '1.0.0' );
