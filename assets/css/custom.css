@@ -42,14 +42,22 @@
     letter-spacing: 0.08em;
     font-weight: normal;
     transform: rotate(-1deg);
-    line-height: 1.3;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.hero-title br {
+    display: block;
+    content: "";
+    margin-top: 0.3rem;
 }
 
 .hero-subtitle-part {
     display: block;
-    font-size: 0.85em;
-    margin-top: 0.5rem;
-    letter-spacing: 0.06em;
+    font-size: 0.75em;
+    margin-top: 0.8rem;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
 }
 
 .hero-subtitle {
@@ -693,6 +701,12 @@
     .hero-title {
         font-size: 2.6rem;
         transform: rotate(-0.5deg);
+        line-height: 1.3;
+    }
+
+    .hero-subtitle-part {
+        font-size: 0.8em;
+        margin-top: 0.6rem;
     }
 
     .hero-subtitle {
