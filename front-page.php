@@ -13,8 +13,8 @@ get_header(); ?>
         <!-- ヒーローセクション -->
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title fade-in">懐かしさと出会える場所</h1>
-                <p class="hero-subtitle fade-in">昭和レトロから平成初期まで、思い出のおもちゃが勢ぞろい</p>
+                <h1 class="hero-title fade-in">思い出広場へようこそ<br>懐かしさと出会える場所</h1>
+                <p class="hero-subtitle fade-in">千葉県市原市のレトロトイショップ | 昭和レトロから平成初期まで、思い出のおもちゃが勢ぞろい</p>
                 <a href="#featured-products" class="retro-button fade-in">商品を見る</a>
             </div>
             <div class="hero-decoration">
@@ -25,25 +25,25 @@ get_header(); ?>
         <!-- 店舗紹介セクション -->
         <section class="about-section">
             <div class="container">
-                <h2>思い出広場へようこそ</h2>
+                <h2>思い出広場について | 市原市五井のレトロトイショップ</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>千葉県市原市にある「思い出広場」は、昭和から平成初期のおもちゃやゲーム、フィギュアなど、懐かしいアイテムを取り扱うレトロトイショップです。</p>
-                        <p>子供の頃に遊んだあのおもちゃ、憧れだったあのゲーム機、今では手に入りにくいレアアイテムまで、幅広い商品をご用意しております。</p>
-                        <p>ぜひ一度、懐かしい思い出を探しにお越しください。</p>
+                        <p><strong>思い出広場</strong>は、千葉県市原市五井駅から徒歩5分にある<strong>レトロトイ専門店</strong>です。昭和から平成初期のおもちゃやゲーム、フィギュアなど、懐かしいアイテムを豊富に取り扱っています。</p>
+                        <p>ファミコン・スーパーファミコン・ゲームボーイなどのレトロゲーム、超合金・ソフビ人形・リカちゃん人形などのフィギュア、トミカ・チョロQ・ガンプラなどのミニカー・プラモデルまで、<strong>思い出広場</strong>には幅広い商品が揃っています。</p>
+                        <p>2025年10月にリニューアルオープン予定の<strong>思い出広場</strong>で、懐かしい思い出を見つけてください。市原市で昭和レトロを感じられる唯一のお店です。</p>
                     </div>
                     <div class="about-features">
                         <div class="feature-card retro-card">
-                            <h3>豊富な品揃え</h3>
-                            <p>ファミコン、スーパーファミコンから、超合金、ソフビ人形まで</p>
+                            <h3>思い出広場の豊富な品揃え</h3>
+                            <p>レトロゲーム機（ファミコン、スーパーファミコン）から、超合金、ソフビ人形まで市原市最大級の在庫</p>
                         </div>
                         <div class="feature-card retro-card">
-                            <h3>状態の良い商品</h3>
-                            <p>丁寧にメンテナンスされた、状態の良い商品を厳選</p>
+                            <h3>思い出広場の品質保証</h3>
+                            <p>全商品を丁寧にメンテナンス。安心してレトロトイをお求めいただけます</p>
                         </div>
                         <div class="feature-card retro-card">
-                            <h3>適正価格</h3>
-                            <p>市場価格を考慮した、適正な価格設定</p>
+                            <h3>思い出広場の適正価格</h3>
+                            <p>千葉県内でも良心的な価格設定。レトロトイを手に取りやすい価格で</p>
                         </div>
                     </div>
                 </div>
@@ -152,7 +152,7 @@ get_header(); ?>
         <!-- カテゴリーセクション -->
         <section class="categories-section">
             <div class="container">
-                <h2>商品カテゴリー</h2>
+                <h2>思い出広場の商品カテゴリー | レトロトイ・昭和レトロ商品</h2>
                 <div class="category-grid">
                     <a href="#" class="category-card retro-card">
                         <h3>ゲーム機・ソフト</h3>
@@ -185,10 +185,10 @@ get_header(); ?>
         <!-- アクセス情報セクション -->
         <section class="access-section">
             <div class="container">
-                <h2>アクセス・営業時間</h2>
+                <h2>思い出広場へのアクセス | 市原市五井駅から徒歩5分</h2>
                 <div class="access-content">
                     <div class="access-info retro-card">
-                        <h3>店舗情報</h3>
+                        <h3>思い出広場 店舗情報</h3>
                         <dl>
                             <dt>住所</dt>
                             <dd>〒290-0081 千葉県市原市五井中央西1丁目22番地6<br>山崎第一ビル102</dd>
@@ -232,9 +232,9 @@ get_header(); ?>
         <!-- お問い合わせセクション -->
         <section class="contact-section">
             <div class="container">
-                <h2>お問い合わせ</h2>
+                <h2>思い出広場へのお問い合わせ | レトロトイの在庫確認</h2>
                 <div class="contact-content retro-card">
-                    <p>商品に関するお問い合わせや、在庫確認など、お気軽にご連絡ください。</p>
+                    <p><strong>思い出広場</strong>への商品に関するお問い合わせや、レトロトイの在庫確認など、お気軽にご連絡ください。市原市近郊への配送も承ります。</p>
                     <div class="contact-methods">
                         <div class="contact-method">
                             <h3>お電話でのお問い合わせ</h3>

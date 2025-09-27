@@ -366,3 +366,97 @@ function omoide_hiroba_admin_styles() {
     <?php
 }
 add_action( 'admin_head', 'omoide_hiroba_admin_styles' );
+
+/**
+ * SEO用メタディスクリプションを取得
+ */
+function omoide_hiroba_get_meta_description() {
+    if ( is_front_page() ) {
+        return '思い出広場は千葉県市原市五井駅近くのレトロトイショップです。昭和レトロから平成初期のおもちゃ、ファミコン、スーパーファミコン、フィギュア、超合金など懐かしいアイテムが勢ぞろい。2025年10月リニューアルオープン！';
+    } elseif ( is_singular( 'product' ) ) {
+        global $post;
+        $excerpt = has_excerpt() ? get_the_excerpt() : wp_trim_words( strip_tags( $post->post_content ), 30 );
+        return '思い出広場で' . get_the_title() . 'を販売中。' . $excerpt . ' 千葉県市原市のレトロトイショップ。';
+    } elseif ( is_post_type_archive( 'product' ) || is_tax( 'product_category' ) || is_tax( 'product_era' ) ) {
+        return '思い出広場の商品一覧。レトロゲーム、フィギュア、ミニカー、プラモデルなど懐かしいおもちゃを多数取り揃え。千葉県市原市五井駅から徒歩5分のレトロトイショップ。';
+    } elseif ( is_page() ) {
+        return get_the_title() . ' | 思い出広場 - 千葉県市原市のレトロトイショップ。昭和レトロおもちゃ、レトロゲーム専門店。';
+    } else {
+        return '思い出広場のお知らせ・ブログ。千葉県市原市のレトロトイショップより、新入荷情報やイベント情報をお届けします。';
+    }
+}
+
+/**
+ * SEO用OGタイトルを取得
+ */
+function omoide_hiroba_get_og_title() {
+    if ( is_front_page() ) {
+        return '思い出広場 | 市原市のレトロトイショップ - 昭和レトロおもちゃ・レトロゲーム専門店';
+    } elseif ( is_singular() ) {
+        return get_the_title() . ' | 思い出広場';
+    } elseif ( is_post_type_archive( 'product' ) ) {
+        return '商品一覧 | 思い出広場 - 市原市のレトロトイショップ';
+    } elseif ( is_tax( 'product_category' ) ) {
+        return single_term_title( '', false ) . ' | 思い出広場';
+    } else {
+        return wp_get_document_title();
+    }
+}
+
+/**
+ * Canonical URLを取得
+ */
+function omoide_hiroba_get_canonical_url() {
+    global $wp;
+    if ( is_front_page() ) {
+        return home_url( '/' );
+    } else {
+        return home_url( add_query_arg( array(), $wp->request ) );
+    }
+}
+
+/**
+ * タイトルタグを最適化
+ */
+function omoide_hiroba_document_title_parts( $title ) {
+    if ( is_front_page() ) {
+        $title['title'] = '思い出広場';
+        $title['tagline'] = '市原市のレトロトイショップ | 昭和レトロおもちゃ・ゲーム専門店';
+    } elseif ( is_singular( 'product' ) ) {
+        $title['title'] = get_the_title() . ' | レトロトイ商品';
+        $title['site'] = '思い出広場';
+    } elseif ( is_post_type_archive( 'product' ) ) {
+        $title['title'] = 'レトロトイ商品一覧';
+        $title['site'] = '思い出広場 - 市原市';
+    }
+    return $title;
+}
+add_filter( 'document_title_parts', 'omoide_hiroba_document_title_parts' );
+
+/**
+ * タイトルセパレーターを変更
+ */
+function omoide_hiroba_document_title_separator( $sep ) {
+    return '|';
+}
+add_filter( 'document_title_separator', 'omoide_hiroba_document_title_separator' );
+
+/**
+ * XMLサイトマップのサポート
+ */
+function omoide_hiroba_sitemap_init() {
+    // WordPress 5.5以降の標準XMLサイトマップを有効化
+    add_filter( 'wp_sitemaps_enabled', '__return_true' );
+}
+add_action( 'init', 'omoide_hiroba_sitemap_init' );
+
+/**
+ * 画像のalt属性を自動設定
+ */
+function omoide_hiroba_auto_alt_text( $attr, $attachment ) {
+    if ( empty( $attr['alt'] ) ) {
+        $attr['alt'] = '思い出広場 - ' . get_the_title( $attachment->ID );
+    }
+    return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'omoide_hiroba_auto_alt_text', 10, 2 );

@@ -1,0 +1,44 @@
+# 思い出広場 robots.txt
+# https://omoidehiroba.com
+
+User-agent: *
+Allow: /
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/cache/
+Disallow: /wp-content/themes/*/inc/
+Disallow: /trackback/
+Disallow: /xmlrpc.php
+Disallow: /*?s=
+Disallow: /*&s=
+Disallow: /search/
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/omoidehiroba/assets/
+
+# クロール遅延設定
+Crawl-delay: 1
+
+# サイトマップ
+Sitemap: https://omoidehiroba.com/wp-sitemap.xml
+
+# Googlebot専用設定
+User-agent: Googlebot
+Allow: /
+Disallow: /wp-admin/
+Crawl-delay: 0
+
+# Bingbot専用設定
+User-agent: Bingbot
+Allow: /
+Disallow: /wp-admin/
+Crawl-delay: 1
+
+# 画像ボット許可
+User-agent: Googlebot-Image
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/omoidehiroba/assets/images/
+
+User-agent: bingbot
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/omoidehiroba/assets/images/

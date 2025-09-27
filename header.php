@@ -11,7 +11,90 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    
+
+    <!-- SEO最適化メタタグ -->
+    <meta name="description" content="<?php echo omoide_hiroba_get_meta_description(); ?>">
+    <meta name="keywords" content="思い出広場,市原市,レトロトイ,おもちゃ,昭和レトロ,レトロゲーム,ファミコン,スーパーファミコン,フィギュア,超合金,ソフビ,五井駅,千葉県,中古おもちゃ,玩具店,トイショップ,リニューアルオープン">
+    <meta name="author" content="思い出広場">
+    <link rel="canonical" href="<?php echo esc_url( omoide_hiroba_get_canonical_url() ); ?>">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="<?php echo is_front_page() ? 'website' : 'article'; ?>">
+    <meta property="og:url" content="<?php echo esc_url( omoide_hiroba_get_canonical_url() ); ?>">
+    <meta property="og:title" content="<?php echo omoide_hiroba_get_og_title(); ?>">
+    <meta property="og:description" content="<?php echo omoide_hiroba_get_meta_description(); ?>">
+    <meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() . '/assets/images/og-image.jpg' ); ?>">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="思い出広場 - 市原市のレトロトイショップ">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="<?php echo esc_url( omoide_hiroba_get_canonical_url() ); ?>">
+    <meta name="twitter:title" content="<?php echo omoide_hiroba_get_og_title(); ?>">
+    <meta name="twitter:description" content="<?php echo omoide_hiroba_get_meta_description(); ?>">
+    <meta name="twitter:image" content="<?php echo esc_url( get_template_directory_uri() . '/assets/images/og-image.jpg' ); ?>">
+
+    <!-- ローカルビジネス構造化データ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ToyStore",
+        "name": "思い出広場",
+        "alternateName": "Omoide Hiroba",
+        "description": "千葉県市原市のレトロトイショップ。昭和から平成初期のおもちゃ、ゲーム、フィギュアなど懐かしいアイテムを取り扱っています。",
+        "url": "https://omoidehiroba.com",
+        "logo": "<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>",
+        "image": "<?php echo esc_url( get_template_directory_uri() . '/assets/images/shop-photo.jpg' ); ?>",
+        "telephone": "+81-436-37-5791",
+        "priceRange": "¥¥",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "五井中央西1丁目22番地6 山崎第一ビル102",
+            "addressLocality": "市原市",
+            "addressRegion": "千葉県",
+            "postalCode": "290-0081",
+            "addressCountry": "JP"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 35.51461437264152,
+            "longitude": 140.08414537578028
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "12:00",
+            "closes": "18:00"
+        },
+        "sameAs": [
+            "https://www.facebook.com/omoidehiroba",
+            "https://www.instagram.com/omoidehiroba",
+            "https://twitter.com/omoidehiroba"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "レトロトイ商品カタログ",
+            "itemListElement": [
+                {
+                    "@type": "Product",
+                    "name": "レトロゲーム機・ソフト",
+                    "category": "ゲーム"
+                },
+                {
+                    "@type": "Product",
+                    "name": "フィギュア・人形",
+                    "category": "玩具"
+                },
+                {
+                    "@type": "Product",
+                    "name": "ミニカー・プラモデル",
+                    "category": "模型"
+                }
+            ]
+        }
+    }
+    </script>
+
     <?php wp_head(); ?>
 </head>
 
