@@ -114,39 +114,47 @@ get_header(); ?>
 
                     <?php
                     wp_reset_postdata();
-                else :
-                    // 商品がない場合は通常の投稿を表示
-                    $recent_args = array(
-                        'post_type'      => 'post',
-                        'posts_per_page' => 3,
-                    );
+                endif;
+                ?>
 
-                    $recent_query = new WP_Query( $recent_args );
+                <!-- 最新のお知らせ（ブログ）セクション -->
+                <?php
+                $recent_args = array(
+                    'post_type'      => 'post',
+                    'posts_per_page' => 3,
+                );
 
-                    if ( $recent_query->have_posts() ) :
-                        ?>
-                        <div class="recent-posts">
-                            <h3>最新のお知らせ</h3>
-                            <div class="posts-grid">
-                                <?php
-                                while ( $recent_query->have_posts() ) :
-                                    $recent_query->the_post();
-                                    ?>
-                                    <article class="retro-card">
-                                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                                        <div class="entry-meta">
-                                            <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
-                                                <?php echo get_the_date(); ?>
-                                            </time>
-                                        </div>
-                                        <?php the_excerpt(); ?>
-                                    </article>
-                                <?php endwhile; ?>
-                            </div>
+                $recent_query = new WP_Query( $recent_args );
+
+                if ( $recent_query->have_posts() ) :
+                    ?>
+                    <div class="recent-posts">
+                        <h3>最新のお知らせ・ブログ</h3>
+                        <div class="posts-grid">
+                            <?php
+                            while ( $recent_query->have_posts() ) :
+                                $recent_query->the_post();
+                                ?>
+                                <article class="retro-card fade-in">
+                                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                    <div class="entry-meta">
+                                        <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+                                            <?php echo get_the_date(); ?>
+                                        </time>
+                                    </div>
+                                    <?php the_excerpt(); ?>
+                                    <a href="<?php the_permalink(); ?>" class="read-more">続きを読む →</a>
+                                </article>
+                            <?php endwhile; ?>
                         </div>
-                        <?php
-                        wp_reset_postdata();
-                    endif;
+                        <div class="view-all">
+                            <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="retro-button">
+                                すべてのお知らせを見る
+                            </a>
+                        </div>
+                    </div>
+                    <?php
+                    wp_reset_postdata();
                 endif;
                 ?>
             </div>
