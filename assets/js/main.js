@@ -81,10 +81,14 @@
 
         // 価格のフォーマット（カンマ区切り）
         $('.price-tag').each(function() {
-            var price = $(this).text().replace(/[^0-9]/g, '');
-            if (price) {
-                var formattedPrice = parseInt(price).toLocaleString('ja-JP');
-                $(this).html('¥' + formattedPrice);
+            var priceText = $(this).text();
+            // すでに¥マークがある場合は処理しない
+            if (!priceText.includes('¥')) {
+                var price = priceText.replace(/[^0-9]/g, '');
+                if (price) {
+                    var formattedPrice = parseInt(price).toLocaleString('ja-JP');
+                    $(this).html('¥' + formattedPrice);
+                }
             }
         });
 

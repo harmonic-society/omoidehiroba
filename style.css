@@ -291,11 +291,6 @@ a:hover {
     letter-spacing: 0.05em;
 }
 
-.price-tag::before {
-    content: '¥';
-    font-size: 0.9em;
-}
-
 /* バッジ */
 .retro-badge {
     display: inline-block;
