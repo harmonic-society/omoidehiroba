@@ -32,32 +32,38 @@
     z-index: 1;
 }
 
-.hero-title {
+.hero-title-wrapper {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title-line1 {
     font-size: 3.8rem;
     font-family: 'RocknRoll One', 'Yusei Magic', cursive;
     color: #fff;
     text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-    margin-bottom: 1rem;
+    margin: 0;
+    margin-bottom: 0.8rem;
     animation: slideDown 0.8s ease-out;
     letter-spacing: 0.08em;
     font-weight: normal;
     transform: rotate(-1deg);
-    line-height: 1.4;
-    text-align: center;
-}
-
-.hero-title br {
-    display: block;
-    content: "";
-    margin-top: 0.3rem;
-}
-
-.hero-subtitle-part {
-    display: block;
-    font-size: 0.75em;
-    margin-top: 0.8rem;
-    letter-spacing: 0.05em;
     line-height: 1.2;
+    display: block;
+}
+
+.hero-title-line2 {
+    font-size: 3.2rem;
+    font-family: 'RocknRoll One', 'Yusei Magic', cursive;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    margin: 0;
+    animation: slideDown 0.8s ease-out 0.2s both;
+    letter-spacing: 0.06em;
+    font-weight: normal;
+    transform: rotate(0.5deg);
+    line-height: 1.2;
+    display: block;
 }
 
 .hero-subtitle {
@@ -698,15 +704,15 @@
 }
 
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.6rem;
+    .hero-title-line1 {
+        font-size: 2.4rem;
         transform: rotate(-0.5deg);
-        line-height: 1.3;
+        margin-bottom: 0.6rem;
     }
 
-    .hero-subtitle-part {
-        font-size: 0.8em;
-        margin-top: 0.6rem;
+    .hero-title-line2 {
+        font-size: 2rem;
+        transform: rotate(0.3deg);
     }
 
     .hero-subtitle {
@@ -761,8 +767,13 @@
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
+    .hero-title-line1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-title-line2 {
+        font-size: 1.5rem;
     }
 
     .product-grid {

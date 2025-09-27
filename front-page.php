@@ -13,7 +13,10 @@ get_header(); ?>
         <!-- ヒーローセクション -->
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title fade-in">思い出広場へようこそ<br><span class="hero-subtitle-part">懐かしさと出会える場所</span></h1>
+                <div class="hero-title-wrapper">
+                    <h1 class="hero-title-line1 fade-in">思い出広場へようこそ</h1>
+                    <div class="hero-title-line2 fade-in">懐かしさと出会える場所</div>
+                </div>
                 <p class="hero-subtitle fade-in">千葉県市原市のレトロトイショップ | 昭和レトロから平成初期まで、思い出のおもちゃが勢ぞろい</p>
                 <a href="#featured-products" class="retro-button fade-in">商品を見る</a>
             </div>
