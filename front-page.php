@@ -166,8 +166,8 @@ get_header(); ?>
                 <h2>思い出広場の商品カテゴリー | レトロトイ・昭和レトロ商品</h2>
                 <div class="category-grid">
                     <a href="#" class="category-card retro-card">
-                        <h3>ゲーム機・ソフト</h3>
-                        <p>ファミコン、スーパーファミコン、ゲームボーイなど</p>
+                        <h3>本・漫画・雑誌</h3>
+                        <p>懐かしの作品やマニアックなものなど</p>
                     </a>
                     <a href="#" class="category-card retro-card">
                         <h3>フィギュア・人形</h3>
@@ -182,12 +182,12 @@ get_header(); ?>
                         <p>ビックリマンシール、カードダスなど</p>
                     </a>
                     <a href="#" class="category-card retro-card">
-                        <h3>ボードゲーム</h3>
-                        <p>人生ゲーム、ドンジャラなど</p>
+                        <h3>ハンドメイド</h3>
+                        <p>缶バッジ、アクリルスタンド、キーホルダー、ストラップなど</p>
                     </a>
                     <a href="#" class="category-card retro-card">
                         <h3>その他</h3>
-                        <p>駄菓子屋グッズ、昭和レトロ雑貨など</p>
+                        <p>駄菓子屋グッズ、昭和・平成レトロ雑貨など</p>
                     </a>
                 </div>
             </div>
@@ -211,7 +211,7 @@ get_header(); ?>
                             <dd>12:00 - 18:00</dd>
 
                             <dt>定休日</dt>
-                            <dd>不定休</dd>
+                            <dd>水・日</dd>
 
                             <dt>駐車場</dt>
                             <dd>近隣コインパーキングをご利用ください</dd>
