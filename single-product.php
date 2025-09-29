@@ -109,7 +109,7 @@ get_header(); ?>
                                 <div class="product-contact">
                                     <p>この商品についてのお問い合わせ</p>
                                     <a href="tel:0436-37-5791" class="retro-button">電話で問い合わせ</a>
-                                    <a href="mailto:info@omoidehiroba.com?subject=<?php echo urlencode( get_the_title() . 'について' ); ?>" class="retro-button">メールで問い合わせ</a>
+                                    <a href="mailto:omoidehiroba.mm09@gmail.com?subject=<?php echo urlencode( get_the_title() . 'について' ); ?>" class="retro-button">メールで問い合わせ</a>
                                 </div>
                             </div>
 

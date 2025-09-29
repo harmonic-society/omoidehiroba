@@ -254,8 +254,8 @@ get_header(); ?>
                         </div>
                         <div class="contact-method">
                             <h3>メールでのお問い合わせ</h3>
-                            <p>info@omoidehiroba.com</p>
-                            <a href="mailto:info@omoidehiroba.com" class="retro-button">メールを送る</a>
+                            <p>omoidehiroba.mm09@gmail.com</p>
+                            <a href="mailto:omoidehiroba.mm09@gmail.com" class="retro-button">メールを送る</a>
                         </div>
                     </div>
                 </div>
