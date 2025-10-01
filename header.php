@@ -23,16 +23,22 @@
     <meta property="og:url" content="<?php echo esc_url( omoide_hiroba_get_canonical_url() ); ?>">
     <meta property="og:title" content="<?php echo omoide_hiroba_get_og_title(); ?>">
     <meta property="og:description" content="<?php echo omoide_hiroba_get_meta_description(); ?>">
-    <meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() . '/assets/images/og-image.jpg' ); ?>">
+    <meta property="og:image" content="<?php echo esc_url( omoide_hiroba_get_og_image() ); ?>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:site_name" content="思い出広場 - 市原市のレトロトイショップ">
+    <?php if ( is_singular() && ! is_front_page() ) : ?>
+    <meta property="article:published_time" content="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+    <meta property="article:modified_time" content="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>">
+    <?php endif; ?>
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="<?php echo esc_url( omoide_hiroba_get_canonical_url() ); ?>">
     <meta name="twitter:title" content="<?php echo omoide_hiroba_get_og_title(); ?>">
     <meta name="twitter:description" content="<?php echo omoide_hiroba_get_meta_description(); ?>">
-    <meta name="twitter:image" content="<?php echo esc_url( get_template_directory_uri() . '/assets/images/og-image.jpg' ); ?>">
+    <meta name="twitter:image" content="<?php echo esc_url( omoide_hiroba_get_og_image() ); ?>">
 
     <!-- ローカルビジネス構造化データ -->
     <script type="application/ld+json">

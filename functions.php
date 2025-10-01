@@ -422,6 +422,29 @@ function omoide_hiroba_get_canonical_url() {
 }
 
 /**
+ * OG画像を取得
+ */
+function omoide_hiroba_get_og_image() {
+    $og_image = '';
+
+    // 個別記事・固定ページの場合、アイキャッチ画像を使用
+    if ( is_singular() && has_post_thumbnail() ) {
+        $thumbnail_id = get_post_thumbnail_id();
+        $image_array = wp_get_attachment_image_src( $thumbnail_id, 'full' );
+        if ( $image_array ) {
+            $og_image = $image_array[0];
+        }
+    }
+
+    // 商品アーカイブや他のページの場合、デフォルト画像を使用
+    if ( empty( $og_image ) ) {
+        $og_image = get_template_directory_uri() . '/assets/images/og-image.jpg';
+    }
+
+    return $og_image;
+}
+
+/**
  * タイトルタグを最適化
  */
 function omoide_hiroba_document_title_parts( $title ) {
