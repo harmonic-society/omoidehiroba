@@ -466,3 +466,39 @@ function omoide_hiroba_auto_alt_text( $attr, $attachment ) {
     return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'omoide_hiroba_auto_alt_text', 10, 2 );
+
+/**
+ * SNSシェアボタンを表示
+ */
+function omoide_hiroba_social_share_buttons() {
+    if ( ! is_singular() ) {
+        return;
+    }
+
+    $post_url = urlencode( get_permalink() );
+    $post_title = urlencode( get_the_title() );
+
+    $twitter_url = 'https://twitter.com/intent/tweet?url=' . $post_url . '&text=' . $post_title;
+    $facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . $post_url;
+    $line_url = 'https://social-plugins.line.me/lineit/share?url=' . $post_url;
+
+    ?>
+    <div class="social-share-buttons">
+        <p class="share-label">この記事をシェア</p>
+        <div class="share-buttons">
+            <a href="<?php echo esc_url( $twitter_url ); ?>" class="share-button share-twitter" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-twitter"></i>
+                <span>X</span>
+            </a>
+            <a href="<?php echo esc_url( $facebook_url ); ?>" class="share-button share-facebook" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="<?php echo esc_url( $line_url ); ?>" class="share-button share-line" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-line"></i>
+                <span>LINE</span>
+            </a>
+        </div>
+    </div>
+    <?php
+}

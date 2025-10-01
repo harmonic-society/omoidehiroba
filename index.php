@@ -109,6 +109,8 @@ get_header(); ?>
                                             <?php endforeach; ?>
                                         </div>
                                     <?php endif; ?>
+
+                                    <?php omoide_hiroba_social_share_buttons(); ?>
                                 </footer>
                             <?php endif; ?>
 

@@ -403,3 +403,93 @@ a:hover {
     color: var(--retro-red);
     font-weight: bold;
 }
+
+/* SNSシェアボタン */
+.social-share-buttons {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fff9f0;
+    border-radius: 10px;
+    border: 2px dashed var(--secondary-color);
+}
+
+.share-label {
+    font-family: 'Yusei Magic', cursive;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.share-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.3rem;
+    border-radius: 25px;
+    color: #fff;
+    font-family: 'Zen Kurenaido', cursive;
+    font-size: 1rem;
+    font-weight: normal;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+    letter-spacing: 0.05em;
+}
+
+.share-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.25);
+    text-decoration: none;
+}
+
+.share-button i {
+    font-size: 1.2rem;
+}
+
+.share-twitter {
+    background: linear-gradient(145deg, #1DA1F2, #0d8bd9);
+}
+
+.share-twitter:hover {
+    background: linear-gradient(145deg, #0d8bd9, #1DA1F2);
+    color: #fff;
+}
+
+.share-facebook {
+    background: linear-gradient(145deg, #1877F2, #0d5ecc);
+}
+
+.share-facebook:hover {
+    background: linear-gradient(145deg, #0d5ecc, #1877F2);
+    color: #fff;
+}
+
+.share-line {
+    background: linear-gradient(145deg, #00B900, #009900);
+}
+
+.share-line:hover {
+    background: linear-gradient(145deg, #009900, #00B900);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .share-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .share-button {
+        justify-content: center;
+        width: 100%;
+    }
+}
