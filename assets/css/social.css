@@ -99,6 +99,21 @@
     box-shadow: 6px 6px 15px rgba(255, 0, 0, 0.3);
 }
 
+/* TikTokボタン */
+.social-btn.social-tiktok {
+    border-color: #000000;
+    color: #000000;
+    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+}
+
+.social-btn.social-tiktok:hover {
+    transform: rotate(2deg) translateY(-3px);
+    background: linear-gradient(145deg, #000000, #333333);
+    color: #fff;
+    border-color: #333333;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
 /* レトロポップなアニメーション */
 @keyframes bounce {
     0%, 100% {

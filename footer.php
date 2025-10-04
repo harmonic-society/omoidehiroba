@@ -44,6 +44,10 @@
                             <i class="fab fa-youtube"></i>
                             <span>YouTube</span>
                         </a>
+                        <a href="https://www.tiktok.com/@user2452605423715" target="_blank" rel="noopener noreferrer" class="social-btn social-tiktok" title="TikTokをフォロー">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
                     </div>
                 </div>
 

@@ -74,7 +74,8 @@
         },
         "sameAs": [
             "https://x.com/omoidehiroba",
-            "https://www.youtube.com/channel/UCb5lRKpYCD7b-YN1Mm9migw"
+            "https://www.youtube.com/channel/UCb5lRKpYCD7b-YN1Mm9migw",
+            "https://www.tiktok.com/@user2452605423715"
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -138,6 +139,9 @@
                     </a>
                     <a href="https://www.youtube.com/channel/UCb5lRKpYCD7b-YN1Mm9migw" target="_blank" rel="noopener noreferrer" class="social-icon-header" title="YouTube">
                         <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@user2452605423715" target="_blank" rel="noopener noreferrer" class="social-icon-header" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
                     </a>
                 </div>
             </div>
