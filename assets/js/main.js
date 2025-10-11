@@ -194,6 +194,101 @@
             $('body').addClass('loaded');
         });
 
+        // HEROスライダー
+        if ($('.hero-slider').length) {
+            var currentSlide = 0;
+            var slides = $('.hero-slide');
+            var dots = $('.slider-dot');
+            var totalSlides = slides.length;
+            var autoPlayInterval;
+
+            // スライドを表示
+            function showSlide(index) {
+                slides.removeClass('active');
+                dots.removeClass('active');
+
+                if (index >= totalSlides) {
+                    currentSlide = 0;
+                } else if (index < 0) {
+                    currentSlide = totalSlides - 1;
+                } else {
+                    currentSlide = index;
+                }
+
+                slides.eq(currentSlide).addClass('active');
+                dots.eq(currentSlide).addClass('active');
+            }
+
+            // 次のスライド
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            // 前のスライド
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+
+            // 自動再生開始
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(nextSlide, 5000); // 5秒ごとに切り替え
+            }
+
+            // 自動再生停止
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            // 次へボタン
+            $('.slider-next').on('click', function() {
+                nextSlide();
+                stopAutoPlay();
+                startAutoPlay(); // 自動再生を再開
+            });
+
+            // 前へボタン
+            $('.slider-prev').on('click', function() {
+                prevSlide();
+                stopAutoPlay();
+                startAutoPlay(); // 自動再生を再開
+            });
+
+            // ドットボタン
+            dots.on('click', function() {
+                var slideIndex = $(this).data('slide');
+                showSlide(slideIndex);
+                stopAutoPlay();
+                startAutoPlay(); // 自動再生を再開
+            });
+
+            // マウスホバーで自動再生停止
+            $('.hero-slider').on('mouseenter', function() {
+                stopAutoPlay();
+            }).on('mouseleave', function() {
+                startAutoPlay();
+            });
+
+            // 自動再生開始
+            if (totalSlides > 1) {
+                startAutoPlay();
+            }
+
+            // キーボード操作
+            $(document).on('keydown', function(e) {
+                if ($('.hero-slider').length && $('.hero-slider').is(':visible')) {
+                    if (e.key === 'ArrowLeft') {
+                        prevSlide();
+                        stopAutoPlay();
+                        startAutoPlay();
+                    } else if (e.key === 'ArrowRight') {
+                        nextSlide();
+                        stopAutoPlay();
+                        startAutoPlay();
+                    }
+                }
+            });
+        }
+
     });
 
     // Window Load

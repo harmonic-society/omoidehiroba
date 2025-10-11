@@ -17,6 +17,42 @@ get_header(); ?>
                     <h1 class="hero-title-line1 fade-in">思い出広場へようこそ</h1>
                     <div class="hero-title-line2 fade-in">懐かしさと出会える場所</div>
                 </div>
+
+                <?php
+                // スライダー画像を取得
+                $slider_images = array();
+                for ( $i = 1; $i <= 5; $i++ ) {
+                    $image_url = get_theme_mod( 'hero_slider_image_' . $i );
+                    if ( ! empty( $image_url ) ) {
+                        $slider_images[] = $image_url;
+                    }
+                }
+
+                // スライダー画像がある場合のみ表示
+                if ( ! empty( $slider_images ) ) :
+                    ?>
+                    <div class="hero-slider">
+                        <div class="hero-slider-container">
+                            <?php foreach ( $slider_images as $index => $image_url ) : ?>
+                                <div class="hero-slide <?php echo $index === 0 ? 'active' : ''; ?>">
+                                    <img src="<?php echo esc_url( $image_url ); ?>" alt="思い出広場 スライド<?php echo esc_attr( $index + 1 ); ?>">
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <?php if ( count( $slider_images ) > 1 ) : ?>
+                            <button class="slider-prev" aria-label="前のスライド">‹</button>
+                            <button class="slider-next" aria-label="次のスライド">›</button>
+
+                            <div class="slider-dots">
+                                <?php foreach ( $slider_images as $index => $image_url ) : ?>
+                                    <button class="slider-dot <?php echo $index === 0 ? 'active' : ''; ?>" data-slide="<?php echo esc_attr( $index ); ?>" aria-label="スライド<?php echo esc_attr( $index + 1 ); ?>へ"></button>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+
                 <p class="hero-subtitle fade-in">千葉県市原市のレトロトイショップ | 昭和レトロから平成初期まで、思い出のおもちゃが勢ぞろい</p>
                 <a href="#featured-products" class="retro-button fade-in">商品を見る</a>
             </div>

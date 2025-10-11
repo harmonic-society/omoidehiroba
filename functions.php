@@ -368,10 +368,70 @@ function omoide_hiroba_admin_styles() {
         .post-type-product .column-price {
             width: 100px;
         }
+        .hero-slider-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .hero-slider-image-item {
+            position: relative;
+            width: 150px;
+        }
+        .hero-slider-image-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+        }
+        .hero-slider-image-item .remove-image {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-size: 14px;
+        }
     </style>
     <?php
 }
 add_action( 'admin_head', 'omoide_hiroba_admin_styles' );
+
+/**
+ * HEROスライダー用のカスタマイザー設定を追加
+ */
+function omoide_hiroba_customize_register( $wp_customize ) {
+    // HEROスライダーセクションを追加
+    $wp_customize->add_section( 'hero_slider_section', array(
+        'title'    => __( 'HEROスライダー画像', 'omoide-hiroba' ),
+        'priority' => 30,
+    ) );
+
+    // スライダー画像の数（最大5枚）
+    for ( $i = 1; $i <= 5; $i++ ) {
+        $wp_customize->add_setting( 'hero_slider_image_' . $i, array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+            $wp_customize,
+            'hero_slider_image_' . $i,
+            array(
+                'label'    => __( 'スライダー画像 ' . $i, 'omoide-hiroba' ),
+                'section'  => 'hero_slider_section',
+                'settings' => 'hero_slider_image_' . $i,
+            )
+        ) );
+    }
+}
+add_action( 'customize_register', 'omoide_hiroba_customize_register' );
 
 /**
  * SEO用メタディスクリプションを取得
