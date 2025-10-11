@@ -384,7 +384,7 @@ function omoide_hiroba_get_meta_description() {
         $excerpt = has_excerpt() ? get_the_excerpt() : wp_trim_words( strip_tags( $post->post_content ), 30 );
         return '思い出広場で' . get_the_title() . 'を販売中。' . $excerpt . ' 千葉県市原市のレトロトイショップ。';
     } elseif ( is_post_type_archive( 'product' ) || is_tax( 'product_category' ) || is_tax( 'product_era' ) ) {
-        return '思い出広場の商品一覧。レトロゲーム、フィギュア、ミニカー、プラモデルなど懐かしいおもちゃを多数取り揃え。千葉県市原市五井駅から徒歩5分のレトロトイショップ。';
+        return '思い出広場の商品一覧。レトロゲーム、フィギュア、ミニカー、プラモデルなど懐かしいおもちゃを多数取り揃え。千葉県市原市五井駅から徒歩4分のレトロトイショップ。';
     } elseif ( is_page() ) {
         return get_the_title() . ' | 思い出広場 - 千葉県市原市のレトロトイショップ。昭和レトロおもちゃ、レトロゲーム専門店。';
     } else {
