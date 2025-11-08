@@ -13,6 +13,13 @@
     <footer id="colophon" class="site-footer">
         <div class="container">
 
+            <!-- フッターCTAセクション -->
+            <div class="footer-cta">
+                <h3>オンラインショップで今すぐ購入</h3>
+                <p>思い出売場なら全国どこからでもご注文いただけます</p>
+                <a href="https://omoideuriba.com/" class="retro-button" target="_blank" rel="noopener noreferrer">思い出売場へ</a>
+            </div>
+
             <?php if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) ) : ?>
                 <div class="footer-widgets">
                     <div class="footer-widget-area">

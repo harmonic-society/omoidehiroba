@@ -54,7 +54,10 @@ get_header(); ?>
                 <?php endif; ?>
 
                 <p class="hero-subtitle fade-in">千葉県市原市のレトロトイショップ | 昭和レトロから平成初期まで、思い出のおもちゃが勢ぞろい</p>
-                <a href="#featured-products" class="retro-button fade-in">商品を見る</a>
+                <div class="hero-cta-buttons fade-in">
+                    <a href="https://omoideuriba.com/" class="retro-button primary" target="_blank" rel="noopener noreferrer">オンラインショップで購入</a>
+                    <a href="#featured-products" class="retro-button secondary">店頭商品を見る</a>
+                </div>
             </div>
             <div class="hero-decoration">
                 <span class="renewal-badge">2025年10月よりリニューアルオープン！</span>
@@ -84,6 +87,10 @@ get_header(); ?>
                             <h3>思い出広場の適正価格</h3>
                             <p>千葉県内でも良心的な価格設定。レトロトイを手に取りやすい価格で</p>
                         </div>
+                    </div>
+                    <div class="about-cta">
+                        <p class="cta-text">オンラインショップでも豊富な商品を取り揃えています</p>
+                        <a href="https://omoideuriba.com/" class="retro-button" target="_blank" rel="noopener noreferrer">思い出売場で商品を探す</a>
                     </div>
                 </div>
             </div>
@@ -225,6 +232,31 @@ get_header(); ?>
                         <h3>その他</h3>
                         <p>駄菓子屋グッズ、昭和・平成レトロ雑貨など</p>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- オンラインショップCTAセクション -->
+        <section class="online-shop-cta">
+            <div class="container">
+                <div class="cta-box retro-card">
+                    <h2>思い出売場 - オンラインショップ</h2>
+                    <p class="cta-description">店頭に来られない方も安心！オンラインショップ「思い出売場」では、全国どこからでも懐かしのレトロトイをご購入いただけます。</p>
+                    <div class="cta-features">
+                        <div class="cta-feature">
+                            <span class="cta-icon">🚚</span>
+                            <span>全国配送対応</span>
+                        </div>
+                        <div class="cta-feature">
+                            <span class="cta-icon">📦</span>
+                            <span>豊富な在庫</span>
+                        </div>
+                        <div class="cta-feature">
+                            <span class="cta-icon">💳</span>
+                            <span>安心の決済</span>
+                        </div>
+                    </div>
+                    <a href="https://omoideuriba.com/" class="retro-button large" target="_blank" rel="noopener noreferrer">思い出売場を見る</a>
                 </div>
             </div>
         </section>
